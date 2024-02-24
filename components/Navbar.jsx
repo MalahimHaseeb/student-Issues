@@ -16,7 +16,7 @@ import { CgOptions } from 'react-icons/cg';
 // const inter = Inter({ subsets: ["latin"] });
 
 // Navbar component
-const Navbar = ({ userRole }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [accountDropdown, setAccountDropdown] = useState(false); // Separate state for account dropdown
   const [dashboardDropdown, setDashboardDropdown] = useState(false); // Separate state for dashboard dropdown

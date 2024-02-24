@@ -140,17 +140,12 @@ export const getServerSideProps = async () => {
     // Find the user with role equal to 1
     const user = await User.findOne({ role: process.env.auth });
 
-    // Find the user with role equal to "Admin"
-   
-    // Check if user is found
-    
-
     // Extract userRole from user if found, otherwise set to null
     const userRole = user ? user.email : null;
 
     return {
       props: {
-        userRole,
+        userRole, // Ensure userRole is included in the props object
       },
     };
   } catch (error) {

@@ -1,7 +1,5 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
-
-
 export interface IUser extends Document {
     name: string;
     email: string;
@@ -25,8 +23,7 @@ const UserSchema: Schema<IUser> = new Schema<IUser>(
     { timestamps: true }
 );
 
-// Ensure model is registered properly
-mongoose.models = {};
-const User: Model<IUser> = mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
+// Register the model directly with mongoose
+const User: Model<IUser> = mongoose.model<IUser>('User', UserSchema);
 
 export default User;

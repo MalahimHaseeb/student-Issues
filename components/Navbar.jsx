@@ -36,12 +36,7 @@ const Navbar = () => {
     if (userToken) {
       setMyUser(JSON.parse(userToken));
       const parsedUser = JSON.parse(userToken);
-      // if (parsedUser.token && userRole === parsedUser.email) {
-      //   setAuth(true);
-      // } else {
-      //   setAuth(false);
-      //   router.push('/'); // Redirect to the home page if not logged in or role mismatch
-      // }
+  
     } else {
       setMyUser(null);
       router.push('/');
@@ -150,38 +145,3 @@ const Navbar = () => {
 export default Navbar;
 
 
-// export const getServerSideProps = async () => {
-//   if (!mongoose.connections[0].readyState) {
-//     await mongoose.connect(process.env.MONGO_URI);
-//   }
-
-//   try {
-//     // Find the user with role equal to 1
-//     const user = await User.findOne({ role: process.env.Auth });
-    
-//     if (!user) {
-//       return {
-//         redirect: {
-//           destination: '/404',
-//           permanent: false,
-//         }
-//       }
-
-
-//     } else {
-//       // If no user with role 1 is found, or you want to restrict access for role 0 as well
-//       return {
-//         props: {
-//           userRole: user.email,
-         
-//         },
-//       };
-//     }
-//   } catch (error) {
-//     // Handle any errors that might occur during the database query
-//     console.error('Error:', error);
-//     return {
-//       props: { userRole },
-//     };
-//   }
-// };
